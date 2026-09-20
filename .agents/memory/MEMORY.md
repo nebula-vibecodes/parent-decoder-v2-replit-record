@@ -3,3 +3,4 @@
 - [Alias and metadata cleanup](alias-metadata-cleanup.md) — publish short aliases conservatively and keep prototype metadata uncertainty-based until evidence exists.
 - [Sensitive editorial release gate](sensitive-editorial-release-gate.md) — keep unreviewed sensitive language prototype-only; verified release requires qualified reviewer, source, and date.
 - [Lexical search boundaries](lexical-search-boundaries.md) — keep primary lookup separate from supporting, guide, and held scopes; decoder labels supporting matches without promoting them.
+- [GitHub integration pushes](github-integration-pushes.md) — use small authenticated Git Data API requests and preserve remote-only files through the base tree.
