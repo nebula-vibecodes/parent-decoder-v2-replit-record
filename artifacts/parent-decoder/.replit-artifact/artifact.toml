@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "Parent Decoder"
+description = "A privacy-first local reference tool that helps parents, guardians, educators, and caregivers understand modern slang, internet language, emojis, abbreviations, memes, and coded phrases without surveillance or data collection."
+version = "1.0.0"
+id = "artifacts/parent-decoder"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 19363
+
+[services.development]
+run = "pnpm --filter @workspace/parent-decoder run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/parent-decoder", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/parent-decoder/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "19363"
+BASE_PATH = "/"

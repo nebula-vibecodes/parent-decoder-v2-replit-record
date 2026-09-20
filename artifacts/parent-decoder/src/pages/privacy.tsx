@@ -1,0 +1,40 @@
+import { Check, EyeOff, FileLock2, HeartHandshake, LockKeyhole, ShieldCheck } from 'lucide-react';
+import { Link } from 'wouter';
+import { LocalNote, PageKicker } from '@/components/app-shell';
+import { TrustNote } from '@/components/trust-note';
+
+const principles = [
+  { icon: FileLock2, title: 'Temporary unless you choose to save', copy: 'Pasted text is held in memory for the decoder interaction and discarded when you clear it or leave. Only a prompt you explicitly save is kept, and it stays in this browser’s local storage.' },
+  { icon: EyeOff, title: 'No surveillance workflow', copy: 'Parent Decoder does not request messages, social-media credentials, contacts, child names, location, or access to a child’s device.' },
+  { icon: LockKeyhole, title: 'No ad personalization', copy: 'This prototype does not personalize advertising based on sensitive searches. It has no account, analytics, or tracking pixels. An optional assistant request sends only what you choose to submit and is not saved as a conversation.' },
+];
+
+export default function Privacy() {
+  return (
+    <div>
+      <section className="border-b border-border bg-[#e8eee8]">
+        <div className="mx-auto max-w-[1120px] px-5 py-16 sm:px-8 md:py-24">
+          <PageKicker>A clear boundary</PageKicker>
+          <div className="grid gap-8 md:grid-cols-[1fr_.8fr] md:items-end"><h1 className="max-w-3xl font-display text-6xl font-semibold leading-[.88] tracking-[-.06em] sm:text-7xl">Privacy is not a footnote. <span className="text-primary">It is the point.</span></h1><p className="text-[17px] leading-7 text-[#52636a]">Parent Decoder helps you understand what you see. <strong className="font-semibold text-foreground">It does not watch your child.</strong></p></div>
+        </div>
+      </section>
+      <div className="mx-auto max-w-[1120px] px-5 py-14 sm:px-8 md:py-20">
+        <div className="grid gap-4 md:grid-cols-3">{principles.map(({ icon: Icon, title, copy }, index) => <article key={title} className={`rise-in delay-${index + 1} rounded-2xl border border-border bg-card p-6 shadow-sm`}><div className="grid h-11 w-11 place-items-center rounded-xl bg-secondary text-primary"><Icon size={19} /></div><h2 className="mt-7 font-display text-2xl font-semibold">{title}</h2><p className="mt-3 text-sm leading-6 text-muted-foreground">{copy}</p></article>)}</div>
+         <div className="mt-14 grid gap-12 lg:grid-cols-[1.05fr_.95fr]">
+          <div>
+            <PageKicker>Responsible use</PageKicker>
+            <h2 className="font-display text-5xl font-semibold leading-[.94] tracking-[-.05em]">Understanding is a first step, not a verdict.</h2>
+            <div className="mt-7 space-y-6 text-sm leading-7 text-muted-foreground"><p>Slang is social. The same phrase can be affectionate between friends, awkward in a classroom, or hurtful in an argument. A dictionary entry cannot know the relationship, the history, or the tone behind a message.</p><p>Use what you find here to open a conversation, not to build a case. Ask the person what they meant. Listen for the answer. If a situation feels unsafe or urgent, put this tool down and contact a trusted adult or appropriate local support.</p></div>
+          </div>
+          <div className="rounded-2xl border border-[#d7cfc2] bg-[#f4efe4] p-6 sm:p-8"><div className="flex items-center gap-2 font-mono-custom text-[10px] uppercase tracking-[.16em] text-primary"><HeartHandshake size={15} /> Conversation over conclusions</div><h3 className="mt-5 font-display text-3xl font-semibold">Questions that leave room.</h3><ul className="mt-6 space-y-4">{['“What does that phrase mean in your group?”', '“I may be missing the context — can you walk me through it?”', '“How did that message make you feel?”', '“Is there anything you want help with?”'].map((question) => <li key={question} className="flex gap-3 text-sm leading-6 text-foreground"><Check size={16} className="mt-1 shrink-0 text-primary" />{question}</li>)}</ul></div>
+        </div>
+          <div className="mt-14 rounded-2xl border border-border bg-card p-6 shadow-sm sm:p-8"><PageKicker>What it does not ask for</PageKicker><h2 className="font-display text-3xl font-semibold">A reference tool, not a monitoring tool.</h2><div className="mt-5 grid gap-3 text-sm leading-6 sm:grid-cols-2"><div className="rounded-xl bg-secondary/55 p-4">No child account or child profile.</div><div className="rounded-xl bg-secondary/55 p-4">No child name, contacts, location, or social-media credentials.</div><div className="rounded-xl bg-secondary/55 p-4">No message history, monitoring, tracking, or secret surveillance workflow.</div><div className="rounded-xl bg-secondary/55 p-4">No claim that this prototype can enforce technical privacy guarantees.</div></div><Link href="/saved" className="focus-ring mt-5 inline-flex text-sm font-semibold text-primary hover:underline">See how explicit saved prompts work</Link></div>
+         <div className="mt-10"><TrustNote /></div>
+         <div className="mt-10 rounded-2xl border border-primary/20 bg-primary/[.06] p-6 sm:p-8"><div className="flex items-start gap-4"><ShieldCheck className="mt-0.5 shrink-0 text-primary" size={22} /><div><h2 className="font-display text-3xl font-semibold">Prototype limits</h2><p className="mt-3 max-w-3xl text-sm leading-6 text-muted-foreground">The entries are illustrative and not independently verified for every community or moment. Matching does not detect danger, intent, or a person’s character. It simply points to language that may deserve a closer look. This page describes the current prototype’s boundaries; it is not a technical guarantee.</p><LocalNote>Prototype · local reference material · no child data requested</LocalNote></div></div></div>
+          <div className="mt-10 rounded-2xl border border-border bg-card p-6 shadow-sm sm:p-8"><PageKicker>User-initiated reporting</PageKicker><h2 className="font-display text-3xl font-semibold">You decide what leaves this page.</h2><div className="mt-3 max-w-3xl space-y-3 text-sm leading-6 text-muted-foreground"><p>When a public reporting address is configured, the Feedback page can prepare an email draft in your own email application for product feedback or a term or guide issue. Parent Decoder does not send, store, queue, or log that report. Opening a composer does not mean the message was sent.</p><p>The draft contains only the issue category, public page URL, public term or guide identity when relevant, your optional explanation, and a privacy reminder. Your email provider and the configured public recipient receive only what you choose to review and send. Decoder input, saved prompts, browsing history, local storage, device details, account information, and hidden metadata are not added.</p><Link href="/feedback" className="focus-ring mt-2 inline-flex text-sm font-semibold text-primary hover:underline" data-testid="link-privacy-feedback">Open Feedback</Link></div></div>
+         <div className="mt-10 rounded-2xl border border-border bg-card p-6 shadow-sm sm:p-8"><PageKicker>Editorial boundary</PageKicker><h2 className="font-display text-3xl font-semibold">Review labels do not create proof.</h2><p className="mt-3 max-w-3xl text-sm leading-6 text-muted-foreground">Prototype, confidence, source type, and last-verified labels describe the state of this local dictionary. They do not review private messages or reports. This edition has no independently verified entries, and the app does not fabricate sources or dates.</p><Link href="/editorial-review" className="focus-ring mt-5 inline-flex text-sm font-semibold text-primary hover:underline">Open the local editorial review</Link></div>
+         <div className="mt-12 flex flex-col items-start justify-between gap-4 border-t border-border pt-7 sm:flex-row sm:items-center"><LocalNote>Parent Decoder · privacy & responsible use</LocalNote><Link href="/decoder" className="focus-ring rounded-full bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground transition hover:bg-primary/90" data-testid="link-privacy-decoder">Open the local decoder</Link></div>
+      </div>
+    </div>
+  );
+}

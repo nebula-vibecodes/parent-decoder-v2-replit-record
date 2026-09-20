@@ -1,0 +1,88 @@
+import { integratedEntry } from './integration-shared';
+
+export const integrationGuideTerms = [
+  integratedEntry({
+    slug: 'thats-so-cooked',
+    term: 'That’s so cooked',
+    aliases: ["that's so cooked", 'that is so cooked'],
+    summary: 'A topic guide for reading “cooked” as playful trouble, exhaustion, or a real safety concern.',
+    parentExplanation:
+      'This guide keeps the phrase from sounding more certain than it is. “That’s so cooked” may be a meme reaction to a mistake, but the surrounding message may name a concrete problem that deserves support.',
+    meanings: [
+      { context: 'Meme or exaggeration', meaning: 'A dramatic reaction to a difficult task, mistake, or losing situation.' },
+      { context: 'Real pressure', meaning: 'A person may be overwhelmed, threatened, or unable to recover without help.' },
+    ],
+    examples: ['“I forgot the project and it is due today — that’s so cooked.”'],
+    categories: ['Memes', 'Texting', 'Online safety'],
+    risk: 'YELLOW',
+    tone: ['Dramatic', 'Humorous', 'Worried'],
+    platforms: ['Texting', 'Social media', 'Gaming chat'],
+    related: ['cooked', 'crash out', 'skull emoji'],
+    harmless: 'Someone exaggerates about homework, a game, or an awkward mistake.',
+    concerning: 'The message includes a specific threat, injury, coercion, self-harm concern, or urgent inability to stay safe.',
+    doNotAssume: ['The phrase is a literal emergency.', 'A joke means the speaker is fine.', 'The label explains the underlying event.'],
+    conversation: {
+      Curious: '“When you say cooked, what actually happened?”',
+      Casual: '“That sounds like a rough moment. Want to reset together?”',
+      Concerned: '“Are you joking, or is there something serious you need help with?”',
+      Serious: '“If there is immediate danger, let’s contact appropriate local support rather than decode the phrase.”',
+    },
+    guide: true,
+  }),
+  integratedEntry({
+    slug: 'quieter-than-usual',
+    term: 'Quieter than usual',
+    aliases: ['quiet lately', 'more quiet than usual', 'not talking much'],
+    summary: 'A topic guide for noticing a change in communication without treating quietness as proof of a problem.',
+    parentExplanation:
+      'A person may be tired, focused, private, upset, or simply having a different day. The useful next step is a gentle check-in that leaves room for a real answer.',
+    meanings: [
+      { context: 'Ordinary change', meaning: 'Someone has less to say because of fatigue, concentration, mood, or preference.' },
+      { context: 'Pattern worth checking', meaning: 'A sustained change may accompany stress, exclusion, fear, or another need for support.' },
+    ],
+    examples: ['“You seem quieter than usual. Do you want company or space?”'],
+    categories: ['Relationships', 'Everyday slang', 'Online safety'],
+    risk: 'BLUE',
+    tone: ['Observational', 'Gentle', 'Concerned'],
+    platforms: ['Texting', 'In person', 'Group chats'],
+    related: ['lowkey', 'mute', 'vibe'],
+    harmless: 'Someone is resting, concentrating, processing, or choosing not to talk yet.',
+    concerning: 'The change persists alongside fear, threats, isolation, bullying, injury, or a direct statement that someone is unsafe.',
+    doNotAssume: ['Quiet means secretive.', 'A change in texting proves depression or danger.', 'The person owes an immediate explanation.'],
+    conversation: {
+      Curious: '“How are you feeling about being quieter today?”',
+      Casual: '“No pressure to talk — I am here if you want company.”',
+      Concerned: '“I noticed a change and wanted to check whether anything is making you uncomfortable.”',
+      Serious: '“Are you safe right now, and is there someone trusted we should contact?”',
+    },
+    guide: true,
+  }),
+  integratedEntry({
+    slug: 'new-trend-or-post',
+    term: 'New trend or post',
+    aliases: ['new trend', 'new post', 'what is trending'],
+    summary: 'A topic guide for asking what a new online trend or post means without assuming popularity, safety, or intent.',
+    parentExplanation:
+      'A new post may be a joke, an advertisement, a challenge, a news claim, or a targeted interaction. Look at the concrete content, source, audience, and pressure rather than treating “trending” as proof.',
+    meanings: [
+      { context: 'Discovery', meaning: 'A new meme, format, phrase, challenge, or post spreading through a group.' },
+      { context: 'Evaluation', meaning: 'A prompt to inspect what the content asks people to do and who may be affected.' },
+    ],
+    examples: ['“Can you show me what the new trend asks people to do?”'],
+    categories: ['Social media', 'Memes', 'Online safety'],
+    risk: 'BLUE',
+    tone: ['Curious', 'Observational', 'Cautious'],
+    platforms: ['TikTok', 'Instagram', 'YouTube', 'Group chats'],
+    related: ['brainrot', 'fyp', 'rage-bait', 'pov', 'skull emoji'],
+    harmless: 'Someone shares a creative format, joke, or new post and explains the context.',
+    concerning: 'The content requests private images, money, dangerous acts, personal information, or secrecy from trusted adults.',
+    doNotAssume: ['Many views mean something is safe or true.', 'A post shows the complete context.', 'Participation is voluntary because a trend is popular.'],
+    conversation: {
+      Curious: '“What does the trend mean, and what does the post ask people to do?”',
+      Casual: '“Show me the part that is confusing — we can look at it together.”',
+      Concerned: '“Did anyone pressure you to join, share information, or keep it secret?”',
+      Serious: '“Do not send images, money, or personal details for a trend. Let’s involve trusted support if someone is pressuring you.”',
+    },
+    guide: true,
+  }),
+];

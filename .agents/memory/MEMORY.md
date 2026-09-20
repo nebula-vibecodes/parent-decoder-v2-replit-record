@@ -1,0 +1,5 @@
+- [Browser release checks](browser-release-checks.md) — Chromium/Nix runtime and explicit Vite PORT/BASE_PATH are required for standalone verification.
+- [Dictionary expansion QA](dictionary-expansion-qa.md) — preserve existing records and check raw record cardinality; unique-owner grouping can hide duplicate rows.
+- [Alias and metadata cleanup](alias-metadata-cleanup.md) — publish short aliases conservatively and keep prototype metadata uncertainty-based until evidence exists.
+- [Sensitive editorial release gate](sensitive-editorial-release-gate.md) — keep unreviewed sensitive language prototype-only; verified release requires qualified reviewer, source, and date.
+- [Lexical search boundaries](lexical-search-boundaries.md) — keep primary lookup separate from supporting, guide, and held scopes; decoder labels supporting matches without promoting them.
